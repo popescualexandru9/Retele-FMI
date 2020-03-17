@@ -105,7 +105,7 @@ Printscreen cu rezultatul:
 4. Într-un alt terminal, în containerul rt2 rulați clientul: `docker-compose exec rt1 bash -c "python3 /elocal/src/tcp_client.py TCP_MESAJ"`
 
 Printscreen cu rezultatul:
-![alt text]()
+![](Screenshots/ex8.png)
 
 
 ---
