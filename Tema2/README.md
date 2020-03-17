@@ -100,25 +100,7 @@ Printscreen cu rezultatul:
 
 ## Exerciții TCP
 
-1. Executați serverul apoi clientul fie într-un container de docker fie pe calculatorul vostru personal: `python3 tcp_server.py` și `python3 tcp_client.py "mesaj de trimis"`.
-```
-prinscreen sau daca a mers la UDP, aici nu mai e necesar
-```
----
-
-2. Modificați adresa de pornire a serverului din 'localhost' în IP-ul rezervat '0.0.0.0' cu scopul de a permite serverului să comunice pe rețea cu containere din exterior. Modificați tcp_client.py ca el să se conecteze la adresa serverului, nu la 'localhost'. Pentru client, puteți înlocui localhost cu adresa IP a containerului rt1 sau chiar cu numele 'rt1'.
-```
-daca mers la UDP, aici nu mai e necesar
-```
-
----
-
-3. Într-un terminal, în containerul rt1 rulați serverul: `docker-compose exec rt1 bash -c "python3 /elocal/src/tcp_server.py"`. 
-
-```
-daca mers la UDP, aici nu mai e necesar
-```
-
+1,2,3 au mers la UDP
 ---
 
 4. Într-un alt terminal, în containerul rt2 rulați clientul: `docker-compose exec rt1 bash -c "python3 /elocal/src/tcp_client.py TCP_MESAJ"`
