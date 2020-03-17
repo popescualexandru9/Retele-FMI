@@ -85,17 +85,17 @@ Printscreen cu rezultatul:
 ---
 
 6. Deschideți un al treilea terminal și atașați-vă containerului rt1: `docker-compose exec rt1 bash`. Utilizați `tcpdump -nvvX -i any udp port 10000` pentru a scana mesajele UDP care circulă pe portul 10000. Apoi apelați clientul pentru a genera trafic.
-```
+
 Printscreen cu rezultatul:
 ![](Screenshots/ex6.png)
-```
+
 
 ---
 
 7. Containerul rt1 este definit în [docker-compose.yml](https://github.com/senisioi/computer-networks/blob/2020/capitolul2/docker-compose.yml) cu redirecționare pentru portul 8001. Modificați serverul și clientul în așa fel încât să îl puteți executa pe containerul rt1 și să puteți să vă conectați la el de pe calculatorul vostru sau de pe rețeaua pe care se află calculatorul vostru.
-```
+
 Printscreen cu rezultatul:
 ![](Screenshots/ex7.png)
-```
+
 ---
 
