@@ -99,3 +99,39 @@ Printscreen cu rezultatul:
 
 ---
 
+
+## Exerciții TCP
+
+1. Executați serverul apoi clientul fie într-un container de docker fie pe calculatorul vostru personal: `python3 tcp_server.py` și `python3 tcp_client.py "mesaj de trimis"`.
+```
+prinscreen sau daca a mers la UDP, aici nu mai e necesar
+```
+---
+
+2. Modificați adresa de pornire a serverului din 'localhost' în IP-ul rezervat '0.0.0.0' cu scopul de a permite serverului să comunice pe rețea cu containere din exterior. Modificați tcp_client.py ca el să se conecteze la adresa serverului, nu la 'localhost'. Pentru client, puteți înlocui localhost cu adresa IP a containerului rt1 sau chiar cu numele 'rt1'.
+```
+daca mers la UDP, aici nu mai e necesar
+```
+
+---
+
+3. Într-un terminal, în containerul rt1 rulați serverul: `docker-compose exec rt1 bash -c "python3 /elocal/src/tcp_server.py"`. 
+
+```
+daca mers la UDP, aici nu mai e necesar
+```
+
+---
+
+4. Într-un alt terminal, în containerul rt2 rulați clientul: `docker-compose exec rt1 bash -c "python3 /elocal/src/tcp_client.py TCP_MESAJ"`
+
+Printscreen cu rezultatul:
+![alt text](https://raw.githubusercontent.com/senisioi/computer-networks/2020/tema2/udp_img.jpg)
+
+---
+
+5. Mai jos sunt explicați pașii din 3-way handshake captați de tcpdump și trimiterea unui singur byte de la client la server. Salvați un exemplu de tcpdump asemănător care conține și partea de [finalizare a conexiunii TCP](http://www.tcpipguide.com/free/t_TCPConnectionTermination-2.htm). Sfat: Modificați clientul să trimită un singur byte fără să facă recv. Modificați serverul să citească doar un singur byte cu recv(1) și să nu facă send. Reporniți serverul din rt1. Deschideți un al treilea terminal, tot în capitolul2 și rulați tcpdump: `docker-compose exec rt1 bash -c "tcpdump -Snnt tcp"` pentru a porni tcpdump pe rt1. 
+```
+Output de tcpdump unde are loc finalizarea conexiunii cu explicatii in scris ca in capitolul2: ce sequence number, ce acknowledgement number, ce flags etc.
+```
+
