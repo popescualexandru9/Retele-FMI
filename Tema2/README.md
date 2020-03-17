@@ -10,7 +10,6 @@ req= requests.get( 'https://1.1.1.1/dns-query' , params ={ 'name' : 'fmi.unibuc.
 dict = req.json()
 dict['Answer'][0]['data']
 ```
-Printscreen cu rezultatul:
 ![](Screenshots/ex1.png)
 
 
@@ -21,7 +20,6 @@ docker-compose exec rt1 bash
 python3 /elocal/src/simple_flask.py
 
 ```
-Printscreen cu rezultatul:
 ![](Screenshots/ex2.png)
 
 
